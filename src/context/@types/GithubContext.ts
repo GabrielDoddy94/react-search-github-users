@@ -5,6 +5,14 @@ export interface IGithubProviderProps {
 }
 
 type GithubUser = {
+  name: string;
+  bio: string;
+  company: string;
+  twitter_username: string;
+  blog: string;
+  location: string;
+  avatar_url: string;
+  html_url: string;
   followers: number;
   following: number;
   public_repos: number;

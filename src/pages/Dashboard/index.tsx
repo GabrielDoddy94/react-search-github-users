@@ -14,7 +14,7 @@ export function Dashboard() {
       {/* <Navbar /> */}
       {/* <Search /> */}
       <Info />
-      {/* <User /> */}
+      <User />
       {/* <Repos /> */}
     </main>
   );
