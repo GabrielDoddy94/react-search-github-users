@@ -1,10 +1,10 @@
 import loadingImage from "../../images/preloader.gif";
 
-import { Info } from "../../components/Info";
-import { Repos } from "../../components/Repos";
-import { User } from "../../components/User";
-import { Search } from "../../components/Search";
 import { Navbar } from "../../components/Navbar";
+import { Search } from "../../components/Search";
+import { Info } from "../../components/Info";
+import { User } from "../../components/User";
+import { Repos } from "../../components/Repos";
 
 // import { GithubContext } from "../../context/context";
 
