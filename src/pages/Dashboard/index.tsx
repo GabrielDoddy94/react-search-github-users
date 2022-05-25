@@ -1,4 +1,4 @@
-import loadingImage from "../images/preloader.gif";
+import loadingImage from "../../images/preloader.gif";
 
 import { Info } from "../../components/Info";
 import { Repos } from "../../components/Repos";
@@ -11,7 +11,11 @@ import { Navbar } from "../../components/Navbar";
 export function Dashboard() {
   return (
     <main>
-      <h2>Dashboard Page</h2>
+      <Navbar />
+      <Search />
+      <Info />
+      <User />
+      <Repos />
     </main>
   );
 }
