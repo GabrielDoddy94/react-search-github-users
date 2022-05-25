@@ -5,7 +5,10 @@ export interface IGithubProviderProps {
 }
 
 type GithubUser = {
-  id: number;
+  followers: number;
+  following: number;
+  public_repos: number;
+  public_gists: number;
 };
 
 type GithubRepos = {

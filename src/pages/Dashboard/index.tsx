@@ -11,11 +11,11 @@ import { Repos } from "../../components/Repos";
 export function Dashboard() {
   return (
     <main>
-      <Navbar />
-      <Search />
+      {/* <Navbar /> */}
+      {/* <Search /> */}
       <Info />
-      <User />
-      <Repos />
+      {/* <User /> */}
+      {/* <Repos /> */}
     </main>
   );
 }

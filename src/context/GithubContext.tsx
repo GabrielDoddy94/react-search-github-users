@@ -6,9 +6,9 @@ import mockRepos from "./mockData/mockRepos";
 import mockFollowers from "./mockData/mockFollowers";
 import { IGithubContext, IGithubProviderProps } from "./@types/GithubContext";
 
-export const GithubContext = createContext({} as IGithubContext);
-
 const rootUrl = "https://api.github.com";
+
+export const GithubContext = createContext({} as IGithubContext);
 
 export function GithubProvider({ children }: IGithubProviderProps) {
   const [githubUser, setGithubUser] = useState(mockUser);
