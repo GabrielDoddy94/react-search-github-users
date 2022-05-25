@@ -9,12 +9,17 @@ import { PrivateRoute } from "./pages/PrivateRoute";
 export function App() {
   return (
     <Router>
-      <Route path="/" exact>
-        <Dashboard />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
+      <Switch>
+        <Route path="/" exact>
+          <Dashboard />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
     </Router>
   );
 }
