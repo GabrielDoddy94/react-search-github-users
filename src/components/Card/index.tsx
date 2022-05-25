@@ -28,7 +28,9 @@ export function Card() {
         </div>
         <a href={html_url}>follow</a>
       </header>
+
       <p className="bio">{bio}</p>
+
       <div className="links">
         <p>
           <MdBusiness /> {company}

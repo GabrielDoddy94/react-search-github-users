@@ -25,6 +25,9 @@ type GithubRepos = {
 
 type GithubFollowers = {
   id: number;
+  login: string;
+  avatar_url: string;
+  html_url: string;
 };
 
 export interface IGithubContext {
