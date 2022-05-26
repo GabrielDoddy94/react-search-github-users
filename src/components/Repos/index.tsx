@@ -11,20 +11,28 @@ import { useContext } from "react";
 export function Repos() {
   const { repos } = useContext(GithubContext);
 
-  const chartData = [
-    {
-      label: "HTML",
-      value: "13",
-    },
-    {
-      label: "CSS",
-      value: "23",
-    },
-    {
-      label: "JavaScript",
-      value: "80",
-    },
-  ];
+  const languages = repos.reduce((total, item) => {
+    const { language } = item;
+
+    if (!language) return total;
+
+    if (!total[language]) {
+      total[language] = { label: language, value: 1 };
+    } else {
+      total[language] = {
+        ...total[language],
+        value: total[language].value + 1,
+      };
+    }
+
+    return total;
+  }, {} as { [key: string]: { label: string; value: number } });
+
+  const chartData = Object.values(languages)
+    .sort((a, b) => {
+      return b.value - a.value;
+    })
+    .slice(0, 5);
 
   return (
     <section className="section">

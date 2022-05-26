@@ -15,7 +15,7 @@ ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
 type ExampleChart = {
   label: string;
-  value: string;
+  value: number;
 };
 
 interface IExampleChartProps {

@@ -21,6 +21,7 @@ type GithubUser = {
 
 type GithubRepos = {
   id: number;
+  language: string;
 };
 
 type GithubFollowers = {
