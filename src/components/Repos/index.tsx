@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { GithubContext } from "../../context/GithubContext";
 
 import { Wrapper } from "./styles";
-import { ExampleChart } from "../Charts/ExampleChart";
 import { Pie3D } from "../Charts/Pie3D";
 import { Column3D } from "../Charts/Column3D";
 import { Bar3D } from "../Charts/Bar3D";
@@ -45,8 +44,9 @@ export function Repos() {
     <section className="section">
       <Wrapper className="section-center">
         <Pie3D data={mostUsed} />
-        <div></div>
+        <Column3D data={mostPopular} />
         <Doughnut2D data={mostPopular} />
+        <Bar3D data={mostPopular} />
       </Wrapper>
     </section>
   );

@@ -13,16 +13,16 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
-type ExampleChart = {
+type Pie3DData = {
   label: string;
   value: number;
 };
 
-interface IExampleChartProps {
-  data: ExampleChart[];
+interface IPie3DProps {
+  data: Pie3DData[];
 }
 
-export function Pie3D({ data }: IExampleChartProps) {
+export function Pie3D({ data }: IPie3DProps) {
   const chartConfigs = {
     type: "pie3d", // The chart type
     width: "100%", // Width of the chart

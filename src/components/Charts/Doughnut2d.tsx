@@ -13,16 +13,16 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
-type ExampleChart = {
+type Doughnut2DData = {
   label: string;
   value: number;
 };
 
-interface IExampleChartProps {
-  data: ExampleChart[];
+interface IDoughnut2DProps {
+  data: Doughnut2DData[];
 }
 
-export function Doughnut2D({ data }: IExampleChartProps) {
+export function Doughnut2D({ data }: IDoughnut2DProps) {
   const chartConfigs = {
     type: "doughnut2d", // The chart type
     width: "100%", // Width of the chart
