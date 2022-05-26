@@ -24,7 +24,7 @@ interface IExampleChartProps {
 
 export function ExampleChart({ data }: IExampleChartProps) {
   const chartConfigs = {
-    type: "column2d", // The chart type
+    type: "bar2d", // The chart type
     width: "400", // Width of the chart
     height: "400", // Height of the chart
     dataFormat: "json", // Data type
