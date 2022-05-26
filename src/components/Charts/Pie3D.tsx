@@ -25,7 +25,7 @@ interface IExampleChartProps {
 export function Pie3D({ data }: IExampleChartProps) {
   const chartConfigs = {
     type: "pie3d", // The chart type
-    width: "400", // Width of the chart
+    width: "100%", // Width of the chart
     height: "400", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
