@@ -15,7 +15,7 @@ export function Dashboard() {
       {/* <Search /> */}
       <Info />
       <User />
-      {/* <Repos /> */}
+      <Repos />
     </main>
   );
 }
