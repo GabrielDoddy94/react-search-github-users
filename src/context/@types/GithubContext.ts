@@ -20,9 +20,11 @@ type GithubUser = {
 };
 
 type GithubRepos = {
+  name: string;
   id: number;
-  language: string;
+  language: string | null;
   stargazers_count: number;
+  forks: number;
 };
 
 type GithubFollowers = {

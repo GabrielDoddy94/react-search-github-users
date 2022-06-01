@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, ReactNode } from "react";
+import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
 import mockUser from "./mockData/mockUser";
