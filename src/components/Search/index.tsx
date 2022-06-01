@@ -1,12 +1,13 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { MdSearch } from "react-icons/md";
 
-// import { GithubContext } from "../context/context";
+import { GithubContext } from "../../context/GithubContext";
 
 import { Wrapper, ErrorWrapper } from "./styles";
 
 export function Search() {
   const [user, setUser] = useState("");
+  const { requests } = useContext(GithubContext);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -24,11 +25,11 @@ export function Search() {
               value={user}
               onChange={e => setUser(e.target.value)}
             />
-            <button type="submit">search</button>
+            {requests > 0 && <button type="submit">search</button>}
           </div>
         </form>
 
-        <h3>requests : 60 / 60</h3>
+        <h3>requests : {requests} / 60</h3>
       </Wrapper>
     </section>
   );

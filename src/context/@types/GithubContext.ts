@@ -1,8 +1,12 @@
 import { ReactNode } from "react";
 
+// Provider Props
+
 export interface IGithubProviderProps {
   children: ReactNode;
 }
+
+// Context
 
 type GithubUser = {
   name: string;
@@ -38,4 +42,15 @@ export interface IGithubContext {
   githubUser: GithubUser;
   repos: GithubRepos[];
   followers: GithubFollowers[];
+  requests: number;
+}
+
+// Requests
+
+type RateLimit = {
+  rate: { remaining: number };
+};
+
+export interface IRequestsData {
+  data: RateLimit;
 }
