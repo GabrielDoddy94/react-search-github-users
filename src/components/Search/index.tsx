@@ -7,7 +7,8 @@ import { Wrapper, ErrorWrapper } from "./styles";
 
 export function Search() {
   const [user, setUser] = useState("");
-  const { searchGithubUser, requests, error } = useContext(GithubContext);
+  const { searchGithubUser, requests, error, isLoading } =
+    useContext(GithubContext);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -34,7 +35,9 @@ export function Search() {
               value={user}
               onChange={e => setUser(e.target.value)}
             />
-            {requests > 0 && <button type="submit">search</button>}
+            {requests > 0 && !isLoading && (
+              <button type="submit">search</button>
+            )}
           </div>
         </form>
 

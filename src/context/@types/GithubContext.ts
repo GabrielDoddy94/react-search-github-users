@@ -49,6 +49,7 @@ export interface IGithubContext {
   followers: GithubFollowers[];
   requests: number;
   error: Error;
+  isLoading: boolean;
   searchGithubUser: (user: string) => void;
 }
 

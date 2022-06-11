@@ -24,6 +24,7 @@ export function GithubProvider({ children }: IGithubProviderProps) {
 
   async function searchGithubUser(user: any) {
     toggleError();
+    setIsLoading(true);
 
     const response = await axios(`${rootUrl}/users/${user}`).catch(err =>
       console.log(err)
@@ -36,6 +37,9 @@ export function GithubProvider({ children }: IGithubProviderProps) {
     } else {
       toggleError(true, "there is no user with that username");
     }
+
+    checkRequests();
+    setIsLoading(false);
   }
 
   function checkRequests() {
@@ -70,6 +74,7 @@ export function GithubProvider({ children }: IGithubProviderProps) {
         followers,
         requests,
         error,
+        isLoading,
         searchGithubUser,
       }}
     >
