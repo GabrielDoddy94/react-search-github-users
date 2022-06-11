@@ -22,6 +22,22 @@ export function GithubProvider({ children }: IGithubProviderProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
 
+  async function searchGithubUser(user: any) {
+    toggleError();
+
+    const response = await axios(`${rootUrl}/users/${user}`).catch(err =>
+      console.log(err)
+    );
+
+    console.log(response);
+
+    if (response) {
+      setGithubUser(response.data);
+    } else {
+      toggleError(true, "there is no user with that username");
+    }
+  }
+
   function checkRequests() {
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }: IRequestsData) => {
@@ -48,7 +64,14 @@ export function GithubProvider({ children }: IGithubProviderProps) {
 
   return (
     <GithubContext.Provider
-      value={{ githubUser, repos, followers, requests, error }}
+      value={{
+        githubUser,
+        repos,
+        followers,
+        requests,
+        error,
+        searchGithubUser,
+      }}
     >
       {children}
     </GithubContext.Provider>

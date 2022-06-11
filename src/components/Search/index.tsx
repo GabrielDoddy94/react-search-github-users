@@ -7,10 +7,14 @@ import { Wrapper, ErrorWrapper } from "./styles";
 
 export function Search() {
   const [user, setUser] = useState("");
-  const { requests, error } = useContext(GithubContext);
+  const { searchGithubUser, requests, error } = useContext(GithubContext);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
+    if (user) {
+      searchGithubUser(user);
+    }
   }
 
   return (
