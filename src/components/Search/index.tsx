@@ -7,7 +7,7 @@ import { Wrapper, ErrorWrapper } from "./styles";
 
 export function Search() {
   const [user, setUser] = useState("");
-  const { requests } = useContext(GithubContext);
+  const { requests, error } = useContext(GithubContext);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -16,6 +16,11 @@ export function Search() {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch />

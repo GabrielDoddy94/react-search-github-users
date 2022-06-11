@@ -20,6 +20,7 @@ export function GithubProvider({ children }: IGithubProviderProps) {
   const [followers, setFollowers] = useState(mockFollowers);
   const [requests, setRequests] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState({ show: false, msg: "" });
 
   function checkRequests() {
     axios(`${rootUrl}/rate_limit`)
@@ -31,10 +32,14 @@ export function GithubProvider({ children }: IGithubProviderProps) {
         setRequests(remaining);
 
         if (remaining === 0) {
-          // throw an error
+          toggleError(true, "sorry, you have exceeded your hourly rate limit!");
         }
       })
       .catch(error => console.log(error));
+  }
+
+  function toggleError(show: boolean = false, msg: string = "") {
+    setError({ show, msg });
   }
 
   useEffect(() => {
@@ -42,7 +47,9 @@ export function GithubProvider({ children }: IGithubProviderProps) {
   }, []);
 
   return (
-    <GithubContext.Provider value={{ githubUser, repos, followers, requests }}>
+    <GithubContext.Provider
+      value={{ githubUser, repos, followers, requests, error }}
+    >
       {children}
     </GithubContext.Provider>
   );

@@ -11,7 +11,7 @@ import { Repos } from "../../components/Repos";
 export function Dashboard() {
   return (
     <main>
-      {/* <Navbar /> */}
+      <Navbar />
       <Search />
       <Info />
       <User />

@@ -38,11 +38,17 @@ type GithubFollowers = {
   html_url: string;
 };
 
+type Error = {
+  show: boolean;
+  msg: string;
+};
+
 export interface IGithubContext {
   githubUser: GithubUser;
   repos: GithubRepos[];
   followers: GithubFollowers[];
   requests: number;
+  error: Error;
 }
 
 // Requests
