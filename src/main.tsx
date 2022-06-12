@@ -9,8 +9,14 @@ import { App } from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
+    <Auth0Provider
+      domain="dev--y511mj4.us.auth0.com"
+      clientId="AmdZJQzxDF8fkPQabtq4M0Z2u1RLS2gK"
+      redirectUri={window.location.origin}
+    >
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </Auth0Provider>
   </React.StrictMode>
 );
