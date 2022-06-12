@@ -8,18 +8,20 @@ import { PrivateRoute } from "./pages/PrivateRoute";
 
 export function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Dashboard />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <AuthWrapper>
+      <Router>
+        <Switch>
+          <PrivateRoute path="/" exact>
+            <Dashboard />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </AuthWrapper>
   );
 }
