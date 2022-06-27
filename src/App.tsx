@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
@@ -10,17 +10,18 @@ export function App() {
   return (
     <AuthWrapper>
       <Router>
-        <Switch>
-          <PrivateRoute path="/" exact>
-            <Dashboard />
-          </PrivateRoute>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </Router>
     </AuthWrapper>
   );
